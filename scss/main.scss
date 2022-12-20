@@ -1,0 +1,66 @@
+@use "./abstracts/variables" as *;
+
+body {
+  font-size: 15px;
+  color: $purple;
+}
+div.box {
+  border: 2px solid red;
+  margin: 3rem 1.2rem;
+}
+
+@media (min-width: 374px) {
+  body {
+    background: url(../images/bg-pattern-bottom-mobile.svg) bottom right,
+      url(../images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    border: 2px solid black;
+
+    padding: 0;
+    text-align: center;
+    h1 {
+      width: 60%;
+      margin: 0.5rem auto;
+      line-height: 1.6rem;
+    }
+    p {
+      color: $gray;
+      font-weight: 500;
+      margin: 1rem 2rem;
+    }
+    .rated {
+      div {
+        padding-top: 0.5rem;
+        font-weight: 700;
+      }
+      aside {
+        background-color: $almost-white;
+        margin-bottom: 0.7rem;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+div {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 1rem 0;
+}
+
+span > img {
+  padding: 0 3px;
+}

@@ -1,20 +1,21 @@
 @use "./abstracts/variables" as *;
 
 body {
-  font-size: 15px;
+  font-size: 16px;
   color: $purple;
 }
-div.box {
-  margin: 3rem 1.2rem;
+
+body {
+  background: url(../images/bg-pattern-bottom-mobile.svg) bottom right,
+    url(../images/bg-pattern-top-mobile.svg);
+  background-size: 70vh;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 374px) {
-  body {
-    background: url(../images/bg-pattern-bottom-mobile.svg) bottom right,
-      url(../images/bg-pattern-top-mobile.svg);
-    background-repeat: no-repeat;
+  div.box {
+    margin: 3rem 1.2rem;
   }
-
   span {
     display: block;
     width: 100%;
@@ -95,5 +96,109 @@ article.card {
         padding: 0;
       }
     }
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+  body {
+    background: url(../images/bg-pattern-bottom-desktop.svg) bottom right,
+      url(../images/bg-pattern-top-desktop.svg);
+    background-size: 70vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  div.box {
+    margin: 7% 10%;
+    padding-bottom: 0;
+  }
+  .box {
+    max-width: 90vw;
+    max-height: 100vh;
+
+    main {
+      text-align: start;
+
+      display: flex;
+      max-height: 40%;
+      justify-content: space-between;
+      .top {
+        max-width: 35%;
+        h1 {
+          margin: 0;
+          font-size: 2.7rem;
+          line-height: 2.3rem;
+          width: 90%;
+          margin-bottom: 1.7rem;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .rated {
+        min-width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+
+        span {
+          width: fit-content;
+          padding-bottom: 2%;
+          margin-right: 1rem;
+        }
+        aside {
+          max-width: 70%;
+          max-height: 12%;
+          padding: 0.57rem;
+          margin-left: 10%;
+        }
+        aside:first-child {
+          padding-left: 0;
+          padding-right: 1rem;
+        }
+        .second-aside {
+          margin-left: 20%;
+        }
+        aside:last-child {
+          margin-left: auto;
+          padding-right: 2rem;
+          padding-left: 1.5rem;
+        }
+      }
+    }
+  }
+
+  section.cards {
+    display: flex;
+    gap: 1.2rem;
+    min-height: 60%;
+
+    .card:nth-child(2) {
+      padding-bottom: 1.7rem !important;
+      height: fit-content !important;
+    }
+
+    .card:first-child {
+      align-self: flex-start;
+      margin-top: 0;
+    }
+    .card:last-child {
+      align-self: flex-end;
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .attribution {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1440) {
+  body,
+  p {
+    font-size: 21px;
   }
 }
